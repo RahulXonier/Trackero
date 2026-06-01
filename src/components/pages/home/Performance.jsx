@@ -1,5 +1,71 @@
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+
+const barsData = [
+    { day: "Mon", height: "45%" },
+    { day: "Tue", height: "62%" },
+    { day: "Wed", height: "50%" },
+    { day: "Thu", height: "78%" },
+    { day: "Fri", height: "90%" },
+    { day: "Sat", height: "70%" },
+];
+
+
+
 
 const Performance = () => {
+    const rightRef = useRef(null)
+    const leftRef = useRef(null)
+
+    useEffect(() => {
+
+        gsap.fromTo(
+            '.leftVisual',
+            {
+                x: -80,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: 'power4.out',
+
+                scrollTrigger: {
+                    trigger: leftRef.current,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse',
+                }
+            }
+        );
+
+        gsap.fromTo(
+            '.rightVisual',
+            {
+                x: 80,
+                opacity: 0,
+                scale: 0.9,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 1.2,
+                ease: 'power4.out',
+
+                scrollTrigger: {
+                    trigger: rightRef.current,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse',
+                }
+            }
+        );
+
+    }, []);
     return (
         <>
             <div
@@ -9,7 +75,8 @@ const Performance = () => {
                 <div className="wrap">
                     <div className="track ">
                         {/* LEFT CONTENT */}
-                        <div className="track-copy">
+                        <div className="track-copy leftVisual"
+                            ref={leftRef}>
                             <span className="eyebrow">
                                 Performance, measured
                             </span>
@@ -83,7 +150,8 @@ const Performance = () => {
                         </div>
 
                         {/* RIGHT VISUAL */}
-                        <div className="track-visual">
+                        <div className="track-visual rightVisual"
+                            ref={rightRef}>
                             <div className="tv-head">
                                 <h5>Team Performance</h5>
 
@@ -93,7 +161,7 @@ const Performance = () => {
                             </div>
 
                             {/* BARS */}
-                            <div className="bars">
+                            {/* <div className="bars">
                                 <div className="bar">
                                     <i style={{ height: "45%" }}></i>
                                     <span>Mon</span>
@@ -123,6 +191,16 @@ const Performance = () => {
                                     <i style={{ height: "70%" }}></i>
                                     <span>Sat</span>
                                 </div>
+                            </div> */}
+
+
+                            <div className="bars">
+                                {barsData.map((item, index) => (
+                                    <div className="bar " key={index}>
+                                        <i style={{ height: item.height }}></i>
+                                        <span>{item.day}</span>
+                                    </div>
+                                ))}
                             </div>
 
                             {/* STATS */}

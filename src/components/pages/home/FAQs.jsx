@@ -4,7 +4,7 @@ const FAQ = () => {
     return (
         <section
             className="sec"
-            style={{ paddingTop: "20px" }}
+            style={{ paddingTop: "80px" }}
         >
             <div className="wrap">
                 {/* SECTION HEAD */}

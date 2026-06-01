@@ -1,13 +1,51 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import gsap from 'gsap'
+
+
+
 
 const Hero = () => {
+
+
+
+    useEffect(() => {
+
+        gsap.fromTo(
+            '.right', {
+            x: 50
+        },
+
+            {
+                x: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power3.out",
+                once: true
+            }
+        );
+
+        gsap.fromTo(
+            '.left', {
+            x: -50
+        },
+
+            {
+                x: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power3.out",
+                overwrite: "auto",
+            }
+        );
+
+    }, []);
     return (
         <>
             <section className="hero">
                 <div className="wrap">
                     <div className="hero-inner">
                         {/* LEFT CONTENT */}
-                        <div className="hero-copy">
+                        <div className="hero-copy left">
                             <span className="pill">
                                 <span className="dot"></span>
                                 Tasks · CRM · Support — in one workspace
@@ -76,7 +114,7 @@ const Hero = () => {
                         </div>
 
                         {/* RIGHT VISUAL */}
-                        <div className="hero-visual">
+                        <div className="hero-visual right">
                             <div className="mock">
                                 <div className="mock-bar">
                                     <i></i>

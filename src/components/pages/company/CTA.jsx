@@ -4,7 +4,7 @@ import React from 'react'
 const CTA = () => {
     return (
         <>
-            <section className="pb-24 max-w-[1200px] mx-auto px-7">
+            <section className="py-20 max-w-[1200px] mx-auto px-7">
                 <div className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] rounded-[34px] py-16 px-8 md:px-16 text-center relative overflow-hidden shadow-[0_16px_40px_rgba(15,184,196,0.30)]">
                     <div className="absolute top-[-160px] left-[-80px] w-[360px] h-[360px] bg-white/10 rounded-full pointer-events-none" />
                     <div className="absolute bottom-[-140px] right-[-50px] w-[280px] h-[280px] bg-white/5 rounded-full pointer-events-none" />

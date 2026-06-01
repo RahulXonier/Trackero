@@ -34,7 +34,7 @@ const CompanyPage = () => {
 
 
             {/* ===== TEAM SECTION ===== */}
-            <Team />
+            {/* <Team /> */}
 
 
             {/* ===== FINAL CTA BANNER ===== */}

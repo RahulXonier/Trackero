@@ -4,6 +4,11 @@ import App from './App.jsx'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Home from './pages/landing/Home.jsx'
 import CompanyPage from './pages/company/Company.jsx'
+import Form from './pages/form/Form.jsx'
+import CheckOutButton from './components/common/CheckOutButton.jsx'
+import SolutionPage from './components/common/SolutionPage.jsx'
+import Feature from './pages/Feature/Feature.jsx'
+import Pricing from './pages/pricing/Pricing.jsx'
 
 
 const router = createBrowserRouter(
@@ -12,6 +17,11 @@ const router = createBrowserRouter(
       <Route path='/' element={<App />}>
         <Route index element={<Home />} />
         <Route path='Company' element={<CompanyPage />} />
+        <Route path='Form' element={<Form />} />
+        <Route path='/PayPal' element={<CheckOutButton />} />
+        <Route path='/Solution/:top/:slug' element={<SolutionPage />} />
+        <Route path='/Feature' element={<Feature />} />
+        <Route path='/Pricing' element={<Pricing />} />
 
       </Route>
     </>
