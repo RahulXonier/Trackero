@@ -1528,7 +1528,8 @@ footer {
     padding: 0 18px
   }
 
-  .statband, .fgrid-main {
+
+  .statband {
     grid-template-columns: 1fr
   }
 

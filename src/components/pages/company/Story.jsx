@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, CheckCircle2, TrendingUp, Globe2, Eye } from 'lucide-react';
+import gsap from 'gsap';
 
 const timelineData = [
     {
@@ -46,9 +47,71 @@ const timelineData = [
 
 const Story = () => {
     const [activeStep, setActiveStep] = useState(0);
+    
+    const teamRef = useRef(null)
+
+    useEffect(() => {
+        gsap.fromTo('.new1', {
+            y: 60,
+            opacity: 0
+        },
+            {
+                y: 0,
+                opacity: 1,
+                stagger: 0.25,
+                ease: 'power2.inOut',
+                duration: 2,
+                scrollTrigger: {
+                    trigger: teamRef.current,
+                    start: 'top 80%'
+                }
+
+            }
+        )
+        gsap.fromTo('.left', {
+            x: -50,
+            opacity: 0
+        },
+            {
+                x: 0,
+                opacity: 1,
+                stagger: 0.25,
+                ease: 'power3.inOut',
+                duration: 2,
+                scrollTrigger: {
+                    trigger: teamRef.current,
+                    start: 'top 80%'
+
+                }
+
+            }
+        )
+
+        gsap.fromTo('.right', {
+            x: 90,
+            opacity: 0
+        },
+            {
+                x: 0,
+                opacity: 1,
+                stagger: 0.25,
+                ease: 'power3.inOut',
+                duration: 2,
+                scrollTrigger: {
+                    trigger: teamRef.current,
+                    start: 'top 80%'
+
+                }
+
+            }
+        )
+
+
+
+    }, [])
 
     return (
-        <section className="py-24 bg-[#f1f6fb] relative overflow-hidden">
+        <section className="py-24 bg-[#f1f6fb] relative ">
             <div
                 className="absolute inset-0 opacity-[0.15] mix-blend-multiply pointer-events-none"
                 style={{
@@ -60,26 +123,31 @@ const Story = () => {
             <div className="absolute top-1/4 -left-32 w-96 h-96 bg-gradient-to-br from-[#16c2cf]/10 to-transparent rounded-full blur-[130px] pointer-events-none" />
             <div className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] bg-gradient-to-tl from-[#0fb8a5]/10 to-transparent rounded-full blur-[150px] pointer-events-none" />
 
-            <div className="max-w-[1200px] mx-auto px-7 relative z-10">
+            <div
+                ref={teamRef}
+                className="max-w-[1200px] mx-auto px-7 relative z-10">
                 <div className="flex flex-col justify-center items-center pb-10">
-                    <span className="inline-flex items-center gap-1.5 bg-white border border-[#e3ebf2] rounded-full px-4 py-1.5 text-xs font-semibold text-[#0fb8c4] shadow-[0_2px_12px_rgba(22,194,207,0.06)] tracking-wide mb-5">
+                    <span className="inline-flex items-center gap-1.5 bg-white border border-[#e3ebf2] rounded-full px-4 py-1.5 text-xs font-semibold text-[#0fb8c4] shadow-[0_2px_12px_rgba(22,194,207,0.06)] tracking-wide mb-5 new1">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#16c2cf]" />
                         Our Journey
                     </span>
-                    <h2 className="font-sora text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#15233b] tracking-tight leading-[1.2] mb-5">
+                    <h2 className="font-sora text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#15233b] tracking-tight leading-[1.2] mb-5 new1">
                         How we built {' '}
                         <span className="bg-gradient-to-r from-[#16c2cf] via-[#0fb8c4] to-[#0fb8a5] bg-clip-text text-transparent">
                             Trakeroo.
                         </span>
                     </h2>
-                    <p className="text-[#5a6b86] text-[15px] leading-relaxed max-w-xl text-center ">
+                    <p className="text-[#5a6b86] text-[15px] leading-relaxed max-w-xl text-center new1">
                         From a small design wireframe to a highly stable ecosystem supporting complex engineering and product operations teams globally. We're just scratching the surface.
                     </p>
                 </div>
-                <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div
+
+
+                    className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
                     {/* Left Hand: Interactive Navigation Nodes Track */}
-                    <div className="lg:col-span-7 relative pl-4 sm:pl-10 space-y-5">
+                    <div className="lg:col-span-7 relative pl-4 sm:pl-10 space-y-5 left">
 
                         {/* Interactive Main Progress Bar Line */}
                         <div className="absolute inset-y-4 left-[19px] lg:left-15 sm:left-[39px] w-[2px] bg-[#e3ebf2]" />
@@ -130,7 +198,7 @@ const Story = () => {
                     </div>
 
                     {/* Right Hand Side: Dynamic Context Analytics Panel View */}
-                    <div className="lg:col-span-5 lg:sticky lg:top-4 bg-white border border-[#e3ebf2] rounded-3xl p-6 md:p-8 shadow-[0_16px_48px_rgba(21,35,59,0.04)] relative overflow-hidden flex flex-col justify-between min-h-[440px]">
+                    <div className="lg:col-span-5 lg:sticky lg:top-26 bg-white border border-[#e3ebf2] rounded-3xl p-6 md:p-8 shadow-[0_16px_48px_rgba(21,35,59,0.04)] relative overflow-hidden flex flex-col right justify-between min-h-[440px]">
 
                         {/* Soft interior decorative gradient strip along the top card fold */}
                         <div className="absolute top-0 inset-x-0 h-[4px] bg-gradient-to-r from-[#16c2cf] via-[#0fb8c4] to-[#0fb8a5]" />

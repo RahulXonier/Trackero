@@ -38,15 +38,16 @@ const FAQ = () => {
                         <span className="w-2 h-2 rounded-full bg-[#16c2cf] animate-pulse "></span>
                         FAQ
                     </span>
-                    <h1>Frequently Asked Questions</h1>
+                    <h1>Frequently Asked{' '}
+                        <span className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] bg-clip-text text-transparent">Questions</span></h1>
                 </div>
-                <div className='aq-wrap mt-10'>
+                <div className=' grid grid-cols-2 gap-10 mt-10 w-full mx-5 '>
                     {
                         data.map((i, ind) => {
                             return (
-                                <details key={ind} className='faq' open>
+                                <details key={ind} className='faq'>
                                     <summary > {i.question}
-                                        <span className="ico" >
+                                        <span className="ico transition-all duration-300 " >
                                             <svg
                                                 width="14"
                                                 height="14"
@@ -67,11 +68,11 @@ const FAQ = () => {
                             )
                         })
                     }
-                </div >
+                </div>
 
 
-            </div >
-        </div >
+            </div>
+        </div>
     )
 }
 

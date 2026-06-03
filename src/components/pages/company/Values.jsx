@@ -1,5 +1,6 @@
+import gsap from 'gsap';
 import { Heart, ShieldCheck, Target } from 'lucide-react';
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const values = [
     {
@@ -20,24 +21,47 @@ const values = [
 ];
 
 const Values = () => {
+    const coreRef = useRef(null)
+
+    useEffect(() => {
+        gsap.fromTo('.new2', {
+            y: 60,
+            opacity: 0
+        },
+            {
+                y: 0,
+                opacity: 1,
+                stagger: 0.25,
+                ease: 'power2.inOut',
+                duration: 1,
+                scrollTrigger: {
+                    trigger: coreRef.current,
+                    start: 'top 80%'
+                }
+
+            }
+        )
+    })
     return (
         <>
             <section className="py-24 max-w-[1200px] mx-auto px-7">
-                <div className="text-center max-w-[680px] mx-auto mb-16">
-                    <span className="inline-block bg-white border border-[#e3ebf2] rounded-full px-4 py-1.5 text-xs font-semibold text-[#0fb8c4] shadow-sm tracking-wide mb-4">
+                <div
+                    ref={coreRef}
+                    className="text-center max-w-[680px] mx-auto mb-16">
+                    <span className="inline-block bg-white border border-[#e3ebf2] rounded-full px-4 py-1.5 text-xs font-semibold text-[#0fb8c4] shadow-sm tracking-wide mb-4 new2">
                         Core Beliefs
                     </span>
-                    <h2 className="font-sora text-3xl md:text-4xl font-bold text-[#15233b]">
+                    <h2 className="font-sora text-3xl md:text-4xl font-bold text-[#15233b] new2">
                         Values that code <span className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] bg-clip-text text-transparent">our culture.</span>
                     </h2>
-                    <p className="mt-3 text-base text-[#5a6b86]">
+                    <p className="mt-3 text-base text-[#5a6b86] new2">
                         We operate transparently, test obsessively, and design purposefully.
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6">
                     {values.map((val, i) => (
-                        <div key={i} className="bg-white border border-[#e3ebf2] rounded-[22px] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_50px_rgba(21,35,59,0.10)] relative overflow-hidden group">
+                        <div key={i} className="bg-white border border-[#e3ebf2] rounded-[22px] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_50px_rgba(21,35,59,0.10)] relative overflow-hidden group new2">
                             <div className="w-[54px] h-[54px] rounded-2xl flex items-center justify-center mb-6 bg-[#f1f6fb] group-hover:scale-110 transition-transform duration-300">
                                 {val.icon}
                             </div>

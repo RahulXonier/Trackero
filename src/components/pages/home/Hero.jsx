@@ -46,12 +46,12 @@ const Hero = () => {
                     <div className="hero-inner">
                         {/* LEFT CONTENT */}
                         <div className="hero-copy left">
-                            <span className="pill">
-                                <span className="dot"></span>
+                            <span className="pill mb-6">
+                                <span className="dot "></span>
                                 Tasks · CRM · Support — in one workspace
                             </span>
 
-                            <h1>
+                            <h1 className='mb-4'>
                                 If your team is doing it,{" "}
                                 <span className="grad-text">
                                     Trakeroo is tracking it.

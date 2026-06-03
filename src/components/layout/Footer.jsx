@@ -1,5 +1,7 @@
 import React from "react";
 import logo from '../../assets/logo2.png'
+import Product from "../pages/footer/Product";
+import Company from "../pages/footer/Company";
 
 const Footer = () => {
     return (
@@ -8,7 +10,7 @@ const Footer = () => {
                 {/* MAIN FOOTER GRID */}
                 <div className="fgrid-main">
                     {/* BRAND */}
-                    <div className="fbrand">
+                    <div className="col-span-2 md:col-span-1">
                         <a href="#" className="logo">
                             <span className="h-10 ">
                                 <img src={logo} alt="logo" className='object-cover h-full' />
@@ -16,7 +18,7 @@ const Footer = () => {
 
                         </a>
 
-                        <p>
+                        <p className="my-5">
                             The modern platform that helps you
                             manage your business, track
                             performance, and grow — all in one
@@ -99,41 +101,14 @@ const Footer = () => {
                     </div>
 
                     {/* PRODUCT */}
-                    <div className="fcol">
-                        <h5>Product</h5>
+                    <Product />
 
-                        <a href="#">
-                            Task Management
-                        </a>
-
-                        <a href="#">Sales CRM</a>
-
-                        <a href="#">
-                            Support Tickets
-                        </a>
-
-                        <a href="#">Integrations</a>
-
-                        <a href="#">Changelog</a>
-                    </div>
 
                     {/* COMPANY */}
-                    <div className="fcol">
-                        <h5>Company</h5>
-
-                        <a href="#">About Us</a>
-
-                        <a href="#">Careers</a>
-
-                        <a href="#">Blog</a>
-
-                        <a href="#">Case Studies</a>
-
-                        <a href="#">Contact</a>
-                    </div>
+                    <Company />
 
                     {/* NEWSLETTER */}
-                    <div className="fcol">
+                    <div className="col-span-2 md:col-span-1">
                         <h5>Newsletter</h5>
 
                         <p
@@ -143,6 +118,7 @@ const Footer = () => {
                                     "rgba(255,255,255,.85)",
                                 marginBottom: "4px",
                             }}
+                            className="my-5"
                         >
                             Get product updates and tips,
                             straight to your inbox.

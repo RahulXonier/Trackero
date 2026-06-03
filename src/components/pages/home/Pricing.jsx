@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
     return (
@@ -123,12 +124,13 @@ const Pricing = () => {
                             </li>
                         </ul>
 
-                        <a
-                            href="#"
+
+                        <Link to='/Paypal'
+                            onClick={() => scrollTo(0, 0)}
                             className="btn btn-ghost"
                         >
                             Get started
-                        </a>
+                        </Link>
                     </div>
 
                     {/* GROWTH */}
@@ -144,7 +146,7 @@ const Pricing = () => {
                         </p>
 
                         <div className="price">
-                            $12 <small>/user</small>
+                            $5 <small>/user</small>
                         </div>
 
                         <div className="per">
@@ -248,12 +250,15 @@ const Pricing = () => {
                             </li>
                         </ul>
 
-                        <a
-                            href="#"
+                        <Link
+                            onClick={() => scrollTo(0, 0)}
+                            to='/Paypal'
+
+
                             className="btn btn-primary"
                         >
                             Start free trial
-                        </a>
+                        </Link>
                     </div>
 
                     {/* ENTERPRISE */}
@@ -348,12 +353,14 @@ const Pricing = () => {
                             </li>
                         </ul>
 
-                        <a
-                            href="#"
+                        <Link
+                            to='/Form'
+                            onClick={() => scrollTo(0, 0)}
+
                             className="btn btn-ghost"
                         >
                             Contact sales
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

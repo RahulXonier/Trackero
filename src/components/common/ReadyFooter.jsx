@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 const ReadyFooter = () => {
     return (
         <div
-            className='w-full min-h-[50vh] pt-20 px-4 md:px-0'>
-            <div className='max-w-7xl h-full flex justify-between items-center  mx-auto border border-cyan-300 py-10 px-8 rounded-2xl '>
+            className='w-full min-h-[50vh] py-20 px-4 md:px-0'>
+            <div className='max-w-7xl h-full flex justify-between items-center   mx-auto border border-cyan-300 py-10 px-8 rounded-2xl '>
                 <div className='flex flex-col lg:flex-row gap-10'>
                     <div className='text-5xl w-20 h-20 rounded-2xl flex justify-center items-center border text-cyan-500 border-cyan-200 bg-cyan-50'><BsStars /></div>
                     <div>

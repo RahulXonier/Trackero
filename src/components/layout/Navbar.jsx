@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/trakeroo.webp'
 import { IoMdArrowDropdown } from "react-icons/io";
 import DropDown from '../common/DropDown';
-import { SolutionData } from '../common/SolutionData';
+import { SolutionData } from '../../data/solution';
 
 
 
@@ -13,11 +13,13 @@ const Navbar = () => {
             <header  >
                 <div class="wrap z-99">
                     <nav  >
-                        <a href="#" className="logo ">
+                        <Link to='/'
+                            onClick={() => window.scrollTo(0, 0)}
+                            className="logo ">
                             <span className="h-10 ">
                                 <img src={logo} alt="logo" className='object-cover h-full' />
                             </span>
-                        </a>
+                        </Link>
                         <div className='flex gap-15'>
                             <div className="nav-links">
                                 <Link to='/'
@@ -54,7 +56,9 @@ const Navbar = () => {
                             <div className="nav-cta">
                                 <Link to='/Form' className="btn btn-ghost"
                                     onClick={() => window.scrollTo(0, 0)}>Get a demo</Link>
-                                <Link to='/PayPal' className="btn btn-primary">Get Started
+                                <Link
+                                    onClick={() => scrollTo(0, 0)}
+                                    to='/PayPal' className="btn btn-primary">Get Started
                                     <svg className="arr" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
                                 </Link>
                             </div>

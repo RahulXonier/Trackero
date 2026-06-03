@@ -1,6 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Features = () => {
+
+    const feaRef = useRef(null)
+
+    useEffect(() => {
+        gsap.fromTo(
+            ".fea",
+            {
+                y: 50,
+                opacity: 0,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 2,
+                ease: "power2.out",
+                stagger: 0.25,
+                scrollTrigger: {
+                    trigger: feaRef.current,
+                    start: "top 80%",
+                },
+
+            }
+
+        );
+    })
     return (
         <section
             className="sec"
@@ -10,21 +39,23 @@ const Features = () => {
                 borderRadius: 0,
             }}
         >
-            <div className="wrap">
+            <div
+                ref={feaRef}
+                className="wrap">
                 {/* SECTION HEAD */}
                 <div className="sec-head ">
-                    <span className="eyebrow">
+                    <span className="eyebrow fea">
                         Why teams choose Trakeroo
                     </span>
 
-                    <h2>
+                    <h2 className="fea">
                         Everything you need to grow,{" "}
                         <span className="grad-text">
                             in one platform.
                         </span>
                     </h2>
 
-                    <p>
+                    <p className="fea">
                         Powerful where it matters, simple where
                         it counts.
                     </p>
@@ -33,8 +64,8 @@ const Features = () => {
                 {/* FEATURES GRID */}
                 <div className="fgrid">
                     {/* CARD 1 */}
-                    <div className="fcard ">
-                        <div className="fic">
+                    <div className="fcard fea ">
+                        <div className="fic ">
                             <svg
                                 width="24"
                                 height="24"
@@ -67,7 +98,7 @@ const Features = () => {
                     </div>
 
                     {/* CARD 2 */}
-                    <div className="fcard ">
+                    <div className="fcard fea ">
                         <div className="fic">
                             <svg
                                 width="24"
@@ -101,7 +132,7 @@ const Features = () => {
                     </div>
 
                     {/* CARD 3 */}
-                    <div className="fcard ">
+                    <div className="fcard fea ">
                         <div className="fic">
                             <svg
                                 width="24"
@@ -135,7 +166,7 @@ const Features = () => {
                     </div>
 
                     {/* CARD 4 */}
-                    <div className="fcard ">
+                    <div className="fcard fea">
                         <div className="fic">
                             <svg
                                 width="24"
@@ -161,7 +192,7 @@ const Features = () => {
                     </div>
 
                     {/* CARD 5 */}
-                    <div className="fcard ">
+                    <div className="fcard fea">
                         <div className="fic">
                             <svg
                                 width="24"
@@ -207,7 +238,7 @@ const Features = () => {
                     </div>
 
                     {/* CARD 6 */}
-                    <div className="fcard ">
+                    <div className="fcard fea">
                         <div className="fic">
                             <svg
                                 width="24"

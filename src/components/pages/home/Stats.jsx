@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Counter from "../../common/Counter";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger)
 
 const Stats = () => {
+    const wrapRef = useRef(null)
+    const [start, setStart] = useState(false)
+    useEffect(() => {
+        ScrollTrigger.create({
+            trigger: wrapRef.current,
+            start: "top 80%",
+            once: true,
+            onEnter: () => setStart(true),
+        });
+
+        gsap.from('.stat', {
+            duration: 1,
+            scrollTrigger: {
+                trigger: wrapRef.current,
+                start: 'top 80%'
+            }
+
+        })
+
+    }, [])
     return (
         <section className="sec">
-            <div className="wrap">
+            <div
+                ref={wrapRef}
+                className="wrap">
                 <div className="statband">
                     {/* STAT 1 */}
                     <div className="stat">
@@ -12,7 +37,7 @@ const Stats = () => {
                             className="num"
 
                         >
-                            <Counter end={1000} />
+                            <Counter end={1000} start={start} />
 
                         </div>
 
@@ -28,7 +53,7 @@ const Stats = () => {
                         <div
                             className="num"
                         >
-                            <Counter end={5000} />
+                            <Counter end={5000} start={start} />
 
                         </div>
 
@@ -45,7 +70,7 @@ const Stats = () => {
                             className="num"
 
                         >
-                            <Counter end={99.9} /> %
+                            <Counter end={99.9} start={start} /> %
 
 
                         </div>
@@ -62,7 +87,7 @@ const Stats = () => {
                         <div
                             className="num"
                         >
-                            <Counter end={120} />
+                            <Counter end={120} start={start} />
 
                         </div>
 

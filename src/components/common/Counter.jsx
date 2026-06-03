@@ -1,26 +1,27 @@
 import { useEffect, useState } from "react";
 
-const Counter = ({ end, duration = 2000 }) => {
+const Counter = ({ end, start, duration = 2000 }) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        let start = 0;
+        if (!start) return
+        let star = 0;
 
         const increment = end / (duration / 16);
 
         const timer = setInterval(() => {
-            start += increment;
+            star += increment;
 
-            if (start >= end) {
+            if (star >= end) {
                 setCount(end);
                 clearInterval(timer);
             } else {
-                setCount(Math.floor(start));
+                setCount(Math.floor(star));
             }
         }, 16);
 
         return () => clearInterval(timer);
-    }, [end, duration]);
+    }, [start]);
 
     return <span>{count}</span>;
 };

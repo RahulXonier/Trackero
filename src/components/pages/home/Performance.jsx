@@ -1,17 +1,21 @@
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { AreaChart, Area, BarChart, Bar, XAxis, YAxis } from 'recharts'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
 
+
+
 const barsData = [
-    { day: "Mon", height: "45%" },
-    { day: "Tue", height: "62%" },
-    { day: "Wed", height: "50%" },
-    { day: "Thu", height: "78%" },
-    { day: "Fri", height: "90%" },
-    { day: "Sat", height: "70%" },
+    { day: "Mon", height: "45" },
+    { day: "Tue", height: "62" },
+    { day: "Wed", height: "50" },
+    { day: "Thu", height: "78" },
+    { day: "Fri", height: "90" },
+    { day: "Sat", height: "70" },
 ];
 
 
@@ -20,8 +24,17 @@ const barsData = [
 const Performance = () => {
     const rightRef = useRef(null)
     const leftRef = useRef(null)
+    const chartRef = useRef(null)
+    const [showChart, setShowChart] = useState(false)
 
     useEffect(() => {
+
+        ScrollTrigger.create({
+            trigger: chartRef.current,
+            start: 'top 80%',
+            once: true,
+            onEnter: () => setShowChart(true)
+        })
 
         gsap.fromTo(
             '.leftVisual',
@@ -38,6 +51,7 @@ const Performance = () => {
                 scrollTrigger: {
                     trigger: leftRef.current,
                     start: 'top 80%',
+                    once: true,
                     toggleActions: 'play none none reverse',
                 }
             }
@@ -61,6 +75,8 @@ const Performance = () => {
                     trigger: rightRef.current,
                     start: 'top 80%',
                     toggleActions: 'play none none reverse',
+                    once: true,
+
                 }
             }
         );
@@ -160,48 +176,31 @@ const Performance = () => {
                                 </span>
                             </div>
 
-                            {/* BARS */}
-                            {/* <div className="bars">
-                                <div className="bar">
-                                    <i style={{ height: "45%" }}></i>
-                                    <span>Mon</span>
-                                </div>
 
-                                <div className="bar">
-                                    <i style={{ height: "62%" }}></i>
-                                    <span>Tue</span>
-                                </div>
+                            <div
+                                ref={chartRef}>
+                                {
+                                    showChart && (
+                                        <BarChart width={500} height={200} data={barsData}>
+                                            <YAxis />
+                                            <XAxis
+                                                dataKey='day' />
+                                            <Bar
+                                                fill="#8884d8"
+                                                dataKey='height'
+                                                barSize={30}
+                                                animationBegin={0}
+                                                animationDuration={2000}
+                                                animationEasing="ease-out" />
+                                        </BarChart>
+                                    )
 
-                                <div className="bar">
-                                    <i style={{ height: "50%" }}></i>
-                                    <span>Wed</span>
-                                </div>
+                                }
 
-                                <div className="bar">
-                                    <i style={{ height: "78%" }}></i>
-                                    <span>Thu</span>
-                                </div>
-
-                                <div className="bar">
-                                    <i style={{ height: "90%" }}></i>
-                                    <span>Fri</span>
-                                </div>
-
-                                <div className="bar">
-                                    <i style={{ height: "70%" }}></i>
-                                    <span>Sat</span>
-                                </div>
-                            </div> */}
-
-
-                            <div className="bars">
-                                {barsData.map((item, index) => (
-                                    <div className="bar " key={index}>
-                                        <i style={{ height: item.height }}></i>
-                                        <span>{item.day}</span>
-                                    </div>
-                                ))}
                             </div>
+
+
+
 
                             {/* STATS */}
                             <div className="tv-stats">

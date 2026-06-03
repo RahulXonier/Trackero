@@ -1,19 +1,50 @@
-import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import React, { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Testimonials = () => {
+    const teamRef = useRef(null)
+
+    useEffect(() => {
+        gsap.fromTo(
+            ".team",
+            {
+                y: 50,
+                opacity: 0,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 2,
+                ease: "power2.out",
+                stagger: 0.25,
+                scrollTrigger: {
+                    trigger: teamRef.current,
+                    start: "top 80%",
+                },
+
+            }
+
+        );
+    })
     return (
         <section
             className="sec"
             style={{ paddingTop: "20px" }}
         >
-            <div className="wrap">
+            <div
+                ref={teamRef}
+                className="wrap">
                 {/* SECTION HEAD */}
                 <div className="sec-head ">
-                    <span className="eyebrow">
+                    <span className="eyebrow team">
                         Loved by teams everywhere
                     </span>
 
-                    <h2>
+                    <h2 className="team">
                         Don't just take{" "}
                         <span className="grad-text">
                             our word for it.
@@ -24,7 +55,7 @@ const Testimonials = () => {
                 {/* TESTIMONIAL GRID */}
                 <div className="tgrid">
                     {/* CARD 1 */}
-                    <div className="tcard ">
+                    <div className="tcard team">
                         <div className="qmark">"</div>
 
                         <div className="stars">
@@ -61,7 +92,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* CARD 2 */}
-                    <div className="tcard ">
+                    <div className="tcard team ">
                         <div className="qmark">"</div>
 
                         <div className="stars">
@@ -97,7 +128,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* CARD 3 */}
-                    <div className="tcard ">
+                    <div className="tcard team">
                         <div className="qmark">"</div>
 
                         <div className="stars">

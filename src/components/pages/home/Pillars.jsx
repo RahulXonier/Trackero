@@ -13,6 +13,7 @@ const Pillars = () => {
             y: 50,
             opacity: 0,
             duration: 1,
+            stagger: 0.25,
             ease: 'power3.out',
 
             scrollTrigger: {
@@ -22,42 +23,48 @@ const Pillars = () => {
             }
         });
 
-        const cards = gsap.utils.toArray('.company-card');
+        // const cards = gsap.utils.toArray('.company-card');
 
-        gsap.from(cards, {
-            x: 120,
+        gsap.fromTo('.company-card', {
+            y: 100,
             opacity: 0,
             scale: 0.9,
-            duration: 1.2,
-            // stagger: 0.25,
-            ease: 'power3.out',
+        },
+            {
+                y: 0,
+                opacity: 1,
+                scale: 1,
 
-            scrollTrigger: {
-                trigger: pillarRef.current,
-                start: 'top 75%',
-                invalidateOnRefresh: true,
-            }
-        });
+                duration: 1.2,
+                stagger: 0.25,
+                ease: 'power3.out',
+
+                scrollTrigger: {
+                    trigger: pillarRef.current,
+                    start: 'top 75%',
+                    invalidateOnRefresh: true,
+                }
+            });
 
     }, []);
     return (
         <>
-            <section className="sec company" id="pillars">
+            <section className="sec " id="pillars">
                 <div className="wrap" ref={pillarRef}>
                     {/* SECTION HEAD */}
                     <div className="sec-head ">
-                        <span className="eyebrow">
+                        <span className="eyebrow company">
                             One platform, three powers
                         </span>
 
-                        <h2>
+                        <h2 className="company">
                             Three teams.{" "}
                             <span className="grad-text">
                                 One source of truth.
                             </span>
                         </h2>
 
-                        <p>
+                        <p className="company">
                             Stop stitching together Jira, a CRM, and a help
                             desk. Trakeroo unifies how your whole company
                             works — and tracks it all in one place.

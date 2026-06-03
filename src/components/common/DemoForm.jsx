@@ -52,16 +52,16 @@ const DemoForm = () => {
             <div className='max-w-7xl mx-auto h-full grid gap-10  grid-cols-5'>
                 <div className='col-span-5 md:col-span-2 px-10 md:px-5 lg:px-2'>
                     <div>
-                        <span className='flex  items-center w-fit gap-2 text-[13.5px] bg-white py-[7px] px-[16px] rounded-3xl text-[var(--teal-600)] font-medium'>
+                        <span className='flex  items-center w-fit gap-2 text-[13.5px] bg-white py-[7px] px-[16px] rounded-3xl text-[var(--teal-600)] font-medium mb-6'>
                             <span className="h-4 w-4 flex justify-center items-center rounded-full bg-teal-100 text-lg"><GoDotFill /></span>
 
                             Book a free Demo </span>
                         <h1>Show How a Trakeroo Transform <span className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] bg-clip-text text-transparent"> Your WorkfLow</span> </h1>
-                        <p className='text-[18px]'>Management project team, sales, and support from one powerful dashboard built for modern business </p>
+                        <p className='text-[18px] mt-4'>Management project team, sales, and support from one powerful dashboard built for modern business </p>
 
 
                     </div>
-                    <div className='mt-10'>
+                    <div className=''>
                         <div className='flex gap-4 py-10 border-b border-slate-200 '>
                             <span className='text-4xl text-[var(--teal-600)] h-14 w-16  flex justify-center items-center rounded-2xl bg-white '><TfiHeadphoneAlt />
                             </span>

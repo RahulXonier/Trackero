@@ -45,7 +45,7 @@ const monthlyPlans = [
     "id": 3,
     "name": "Business",
     "description": "For growing businesses",
-    "price": 49,
+    "price": 45,
     "oldPrice": 69,
     "currency": "$",
     "period": "/month",
@@ -54,7 +54,7 @@ const monthlyPlans = [
     "badge": "MOST POPULAR",
     "borderColor": "#33bf8b",
     "features": [
-      "Up to 100 Users",
+      "Up to 50 Users",
       "Team Performance",
       "Revenue Tracking",
       "Automation Workflows",

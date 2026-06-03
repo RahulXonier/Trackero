@@ -9,6 +9,8 @@ import CheckOutButton from './components/common/CheckOutButton.jsx'
 import SolutionPage from './components/common/SolutionPage.jsx'
 import Feature from './pages/Feature/Feature.jsx'
 import Pricing from './pages/pricing/Pricing.jsx'
+import FooterPage from './components/common/FooterPage.jsx'
+import Careers from './pages/career/Careers.jsx'
 
 
 const router = createBrowserRouter(
@@ -22,6 +24,8 @@ const router = createBrowserRouter(
         <Route path='/Solution/:top/:slug' element={<SolutionPage />} />
         <Route path='/Feature' element={<Feature />} />
         <Route path='/Pricing' element={<Pricing />} />
+        <Route path='/Product/:slug' element={<FooterPage />} />
+        <Route path='/Career' element={<Careers />} />
 
       </Route>
     </>
