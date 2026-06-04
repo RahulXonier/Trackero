@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Company = () => {
@@ -8,9 +7,10 @@ const Company = () => {
 
             <a href="#">About Us</a>
 
-            <Link to='/Career'>Careers</Link>
+            <Link to='/Career'
+                onClick={() => window.scrollTo(0, 0)}>Careers</Link>
 
-            <a href="#">Blog</a>
+            <Link to='/Blogs' onClick={() => window.scrollTo(0, 0)}>Blog</Link>
 
             <a href="#">Case Studies</a>
 

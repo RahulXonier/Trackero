@@ -4,6 +4,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { PiToolboxLight } from "react-icons/pi";
 import bg2 from '../../../assets/bg2.png'
 import { FaCheck } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const Open = () => {
@@ -11,8 +12,8 @@ const Open = () => {
     const right = careersPageData.lifeAtTrackeroo
     return (
         <div className='w-full min-h-[80vh] py-20 '>
-            <div className='max-w-7xl h-full mx-auto grid grid-cols-3 gap-12'>
-                <div className='col-span-2'>
+            <div className='max-w-7xl h-full mx-auto grid grid-cols-3 gap-12 px-4'>
+                <div className='col-span-3 md:col-span-2'>
                     <div>
                         <h2 className='text-[40px] font-[700] '>Open {' '}
                             <span className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] bg-clip-text text-transparent">
@@ -37,7 +38,7 @@ const Open = () => {
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div className='flex gap-4 justify-center col-span-2'>
+                                            <div className='flex flex-col md:flex-row gap-4 justify-center col-span-2'>
                                                 <span className='flex justify-center items-center gap-1'><CiLocationOn />
                                                     <span className='text-[14.5px]'>
                                                         {i.location}
@@ -50,7 +51,10 @@ const Open = () => {
                                                     </span>
                                                 </span>
                                             </div>
-                                            <div className='flex justify-center items-center'><button className='px-4 py-2 border bg-slate-50 border-slate-200 rounded-2xl text-[14.5px]'>View Details</button></div>
+                                            <div className='flex justify-center items-center'>
+                                                <Link to={`/Career/${i.slug}`}
+                                                    onClick={() => window.scrollTo(0, 0)}
+                                                    className='px-4 py-2 border bg-slate-50 border-slate-200 rounded-2xl text-[14.5px]'>View Details</Link></div>
                                         </div>
                                     )
                                 })
@@ -58,7 +62,7 @@ const Open = () => {
                         </div>
                     </div>
                 </div>
-                <div className='col-span-1 bg-slate-50 rounded-2xl px-5 py-6'>
+                <div className=' bg-slate-50 hidden md:flex flex-col col-span-1 rounded-2xl px-5 py-6'>
                     <h2 className='font-[700] text-[20px]'>{right.title}</h2>
                     <p className='mt-4'>{right.desc}</p>
                     <ul className="space-y-2 mt-4">

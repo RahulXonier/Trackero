@@ -11,6 +11,8 @@ import Feature from './pages/Feature/Feature.jsx'
 import Pricing from './pages/pricing/Pricing.jsx'
 import FooterPage from './components/common/FooterPage.jsx'
 import Careers from './pages/career/Careers.jsx'
+import JobDetails from './pages/jobDetails/JobDetails.jsx'
+import Blogs from './pages/blogs/Blogs.jsx'
 
 
 const router = createBrowserRouter(
@@ -26,7 +28,8 @@ const router = createBrowserRouter(
         <Route path='/Pricing' element={<Pricing />} />
         <Route path='/Product/:slug' element={<FooterPage />} />
         <Route path='/Career' element={<Careers />} />
-
+        <Route path='/Career/:slug' element={<JobDetails />} />
+        <Route path='/Blogs' element={<Blogs />} />
       </Route>
     </>
   )

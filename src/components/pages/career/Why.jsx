@@ -1,4 +1,3 @@
-import React from 'react'
 import { careersPageData } from '../../../data/careers'
 
 
@@ -7,13 +6,13 @@ const Why = () => {
     const data = careersPageData.values
     return (
         <div className='w-full min-h-[50vh] py-20'>
-            <div className='max-w-7xl h-full mx-auto flex flex-col items-center'>
-                <h2 className='text-[40px] font-[700] '>Why you'll love {' '}
+            <div className='max-w-7xl h-full mx-auto flex flex-col items-center px-4 '>
+                <h2 className='text-[40px] font-[700] text-center md:text-start'>Why you'll love {' '}
                     <span className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] bg-clip-text text-transparent">
                         working here
                     </span></h2>
-                <p className='mt-[14px] text-[17px] text-[var(--ink-500)]'>We believes great people do their best work in he right environment </p>
-                <div className='grid grid-cols-3 gap-8 mt-13'>
+                <p className='mt-[14px] text-[17px] text-[var(--ink-500)] text-center md:text-start'>We believes great people do their best work in he right environment </p>
+                <div className='grid grid-cols-2 md:grid-cols-3 gap-8 mt-13'>
                     {
                         data.map((i) => {
                             return (
