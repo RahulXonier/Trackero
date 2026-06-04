@@ -42,50 +42,8 @@ const Left = () => {
                 }
             </div>
 
-            {/* Featured Post */}
-            {/* <div className='grid lg:grid-cols-2 bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm'>
 
-                <div className='bg-gradient-to-br from-cyan-400 to-emerald-400 p-6 flex items-center justify-center'>
-                    <img
-                        src={featuredPost.image}
-                        alt={featuredPost.title}
-                        className='w-full object-cover'
-                    />
-                </div>
 
-                <div className='p-8 flex flex-col justify-center'>
-
-                    <span className='inline-flex w-fit px-4 py-1 rounded-full bg-cyan-50 text-cyan-600 text-sm font-medium'>
-                        {featuredPost.category}
-                    </span>
-
-                    <h2 className='text-3xl font-bold text-[#043264] mt-4'>
-                        {featuredPost.title}
-                    </h2>
-
-                    <p className='text-slate-500 mt-4 leading-7'>
-                        {featuredPost.excerpt}
-                    </p>
-
-                    <div className='flex items-center gap-4 mt-6 text-sm text-slate-400'>
-                        <span>{featuredPost.author.name}</span>
-                        <span>•</span>
-                        <span>{featuredPost.publishDate}</span>
-                        <span>•</span>
-                        <span>{featuredPost.readTime}</span>
-                    </div>
-
-                    <Link
-                        to={`/blog/${featuredPost.slug}`}
-                        className='mt-6 w-fit px-6 py-3 rounded-xl bg-gradient-to-r from-[#1ba2c3] to-[#33bf8b] text-white font-medium'
-                    >
-                        Read Article
-                    </Link>
-
-                </div>
-            </div> */}
-
-            {/* Blog List */}
             {filterData.map((post) => (
                 <article
                     key={post.id}

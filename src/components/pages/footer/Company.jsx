@@ -5,7 +5,7 @@ const Company = () => {
         <div className="fcol">
             <h5>Company</h5>
 
-            <a href="#">About Us</a>
+            <Link to='/Company' onClick={() => window.scrollTo(0, 0)}>About Us</Link>
 
             <Link to='/Career'
                 onClick={() => window.scrollTo(0, 0)}>Careers</Link>
@@ -14,7 +14,7 @@ const Company = () => {
 
             <a href="#">Case Studies</a>
 
-            <a href="#">Contact</a>
+            <Link to='/Form' onClick={() => window.scrollTo(0, 0)}>Contact</Link>
         </div>
 
     )

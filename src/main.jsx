@@ -21,7 +21,7 @@ const router = createBrowserRouter(
       <Route path='/' element={<App />}>
         <Route index element={<Home />} />
         <Route path='Company' element={<CompanyPage />} />
-        <Route path='Form' element={<Form />} />
+        <Route path='/Form' element={<Form />} />
         <Route path='/PayPal' element={<CheckOutButton />} />
         <Route path='/Solution/:top/:slug' element={<SolutionPage />} />
         <Route path='/Feature' element={<Feature />} />
