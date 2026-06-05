@@ -1,19 +1,13 @@
-import React, { useEffect } from 'react'
-import { AiOutlineProduct } from 'react-icons/ai'
-import { RiFileEditLine } from "react-icons/ri";
-import { FaUserGroup } from "react-icons/fa6";
+
 import dashboard from '../../../assets/dashboardss.png'
 import acc from '../../../assets/03-1.png'
 import gsap from 'gsap';
+import { heroData } from '../../../data/feature';
+import { useEffect } from 'react';
 
 
 
-const data = [
-    { id: 1, icon: <AiOutlineProduct />, head: 'Real-time insights and analysis.', color: 'bg-cyan-50 border border-cyan-500 text-cyan-500' },
-    { id: 2, icon: <FaUserGroup />, head: 'Track leads, revenue & team performance.', color: 'bg-cyan-50 border border-cyan-500 text-cyan-500' },
-    { id: 3, icon: <RiFileEditLine />, head: 'Customizable widget and reports.', color: 'bg-cyan-50 border border-cyan-500 text-cyan-500' },
 
-]
 
 
 const Hero = () => {
@@ -86,7 +80,7 @@ const Hero = () => {
 
                     <div className='flex flex-col gap-2 mt-4 ' >
                         {
-                            data.map((i) => {
+                            heroData.map((i) => {
                                 return (
                                     <div className='flex gap-4 items-center'>
                                         <div className={`h-10 w-10 rounded-full flex justify-center items-center ${i.color}`}>

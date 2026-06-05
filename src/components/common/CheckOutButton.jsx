@@ -224,27 +224,29 @@ const CheckOutButton = () => {
               </div>
             </div>
 
+            <div className="px-5">
+              <div className="flex justify-between mt-5 text-[14.5px] ">
+                <span>Plan</span>
+                <span>{data.summary.plan}</span>
+              </div>
+              <div className="flex justify-between py-5 border-b border-slate-200 text-[14.5px]">
+                <span>Billing</span>
+                <span>{data.summary.billing}</span>
+              </div>
+              <div className="flex justify-between mt-5 text-[14.5px]">
+                <span>Subtotal</span>
+                <span>{data.summary.subtotal}</span>
+              </div><div className="flex justify-between py-5 border-b border-slate-200 text-[14.5px]">
+                <span>Tax</span>
+                <span>{data.summary.tax} %</span>
+              </div>
+              <div className="flex justify-between mt-5 text-[14.5px]">
+                <span className="font-bold">Today's Total</span>
+                <span className="font-bold text-green-500">{data.plan.currency}{data.summary.totalToday}</span>
+              </div>
 
-            <div className="flex justify-between mt-5 text-[14.5px]">
-              <span>Plan</span>
-              <span>{data.summary.plan}</span>
-            </div>
-            <div className="flex justify-between py-5 border-b border-slate-200 text-[14.5px]">
-              <span>Billing</span>
-              <span>{data.summary.billing}</span>
-            </div>
-            <div className="flex justify-between mt-5 text-[14.5px]">
-              <span>Subtotal</span>
-              <span>{data.summary.subtotal}</span>
-            </div><div className="flex justify-between py-5 border-b border-slate-200 text-[14.5px]">
-              <span>Tax</span>
-              <span>{data.summary.tax} %</span>
-            </div>
-            <div className="flex justify-between mt-5 text-[14.5px]">
-              <span className="font-bold">Today's Total</span>
-              <span className="font-bold text-green-500">{data.plan.currency}{data.summary.totalToday}</span>
-            </div>
 
+            </div>
             <div className="flex gap-6 border border-slate-200 p-4 rounded-xl mt-5">
               <div className="w-20 h-20 bg-green-100 text-green-500 flex justify-center items-center rounded-xl text-6xl">
                 {data.offer.icon}

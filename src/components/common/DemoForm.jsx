@@ -1,11 +1,11 @@
-import { Phone } from 'lucide-react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { BiCheckShield } from "react-icons/bi";
 import { GoDotFill } from "react-icons/go";
-import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Countries from './Countries';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 
@@ -13,13 +13,12 @@ import Countries from './Countries';
 const DemoForm = () => {
     const [formData, setFormData] = useState({
         name: '',
-
         email: '',
         phone: '',
         address: '',
-        industry: '',
-        companyName: '',
-        empStrength: '',
+        industry_type: '',
+        company_name: '',
+        team_size: '',
         message: '',
     })
 
@@ -29,22 +28,38 @@ const DemoForm = () => {
 
     }
 
-    const handleSubmit = (e) => {
+
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
         console.log(formData)
-        setFormData(
-            {
-                name: '',
+        try {
+            const res = await axios.post('http://127.0.0.1:8000/api/query',
+                formData
+            )
 
-                email: '',
-                phone: '',
-                address: '',
-                industry: '',
-                companyName: '',
-                empStrength: '',
-                message: '',
+            if (res.status === 200) {
+                toast("Thank's, we will connect soon....")
+
+                console.log('Form data submit success')
+
+                setFormData(
+                    {
+                        name: '',
+                        email: '',
+                        phone: '',
+                        address: '',
+                        industry_type: '',
+                        company_name: '',
+                        team_size: '',
+                        message: '',
+                    }
+                )
+
             }
-        )
+        } catch (err) {
+            console.log("error found :", err)
+        }
     }
 
     return (
@@ -138,8 +153,7 @@ const DemoForm = () => {
 
                                     onChange={handleChange}
                                     placeholder='+91-9310******'
-                                    value={formData.phone}
-                                />
+                                    value={formData.phone} />
 
                             </div>
 
@@ -167,13 +181,13 @@ const DemoForm = () => {
                                 Company Name<span className='text-red-400 pl-1'>*</span>
                             </label>
                             <input
-                                name='companyName'
+                                name='company_name'
                                 type='text'
                                 className='border border-slate-100 rounded-2xl py-4 px-3 text-sm outline-0 hover:border-slate-300'
                                 required
 
                                 placeholder='Your company'
-                                value={formData.companyName}
+                                value={formData.company_name}
                                 onChange={handleChange}
                             />
 
@@ -184,11 +198,11 @@ const DemoForm = () => {
                             </label>
 
                             <select
-                                name='empStrength'
-                                type='number'
+                                name='team_size'
+                                type='text'
                                 required
                                 className='border border-slate-100 rounded-2xl py-4 px-3 text-sm outline-0 hover:border-slate-300'
-                                value={formData.empStrength}
+                                value={formData.team_size}
                                 onChange={handleChange}
                             >
                                 <option value="">Select</option>
@@ -210,12 +224,12 @@ const DemoForm = () => {
                             <input
                                 type='text'
                                 required
-                                name='industry'
+                                name='industry_type'
                                 className='border border-slate-100 rounded-2xl py-4 px-3 text-sm outline-0 hover:border-slate-300'
 
                                 onChange={handleChange}
                                 placeholder='e.g. Technology, Healthcare, Finance'
-                                value={formData.industry}
+                                value={formData.industry_type}
                             />
 
                         </div>
@@ -236,7 +250,8 @@ const DemoForm = () => {
                             />
                         </div>
 
-                        <button type='submit'
+                        <button
+                            type='submit'
                             className='col-span-2 py-4 mt-5 rounded-2xl transition-all duration-400 outline-0 bg-blue-500 text-white font-bold hover:bg-blue-600'
                         >Submit</button>
 

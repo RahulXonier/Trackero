@@ -1,89 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
-import { BsBarChartFill } from "react-icons/bs";
-import { IoIosFunnel } from 'react-icons/io';
-import { LuCircleDollarSign } from "react-icons/lu";
-import { FaCalendarDays, FaUsers } from 'react-icons/fa6';
-import { PiFileTextFill } from "react-icons/pi";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { dashFeatureData } from '../../../data/feature';
 
 gsap.registerPlugin(ScrollTrigger)
-
-
-
-
-const data =
-
-    [
-        {
-            "id": 1,
-            "title": "At-a-Glance Overview",
-            "description": "Monitor key metrics and KPIs in real-time. Get a snapshot of what matters most.",
-            "icon": <BsBarChartFill />,
-            "iconBg": "#EFF6FF",
-            "iconBorder": "#93C5FD",
-            "iconColor": "#2563EB",
-            "cardBorder": "#BFDBFE",
-            "cardGradient": "from-blue-50 to-transparent"
-        },
-        {
-            "id": 2,
-            "title": "Lead & Sales Pipeline",
-            "description": "Track every lead and deal across the pipeline. Know exactly where you stand.",
-            "icon": <IoIosFunnel />,
-            "iconBg": "#ECFDF5",
-            "iconBorder": "#86EFAC",
-            "iconColor": "#16A34A",
-            "cardBorder": "#BBF7D0",
-            "cardGradient": "from-green-50 to-transparent"
-        },
-        {
-            "id": 3,
-            "title": "Revenue Tracking",
-            "description": "Monitor earnings, conversions, and financial performance in real-time.",
-            "icon": <LuCircleDollarSign />,
-            "iconBg": "#FFF7ED",
-            "iconBorder": "#FDBA74",
-            "iconColor": "#EA580C",
-            "cardBorder": "#FED7AA",
-            "cardGradient": "from-orange-50 to-transparent"
-        },
-        {
-            "id": 4,
-            "title": "Team Performance",
-            "description": "Manage users, teams, and activities effortlessly. Boost productivity together.",
-            "icon": <FaUsers />,
-            "iconBg": "#F5F3FF",
-            "iconBorder": "#C4B5FD",
-            "iconColor": "#7C3AED",
-            "cardBorder": "#DDD6FE",
-            "cardGradient": "from-violet-50 to-transparent"
-        },
-        {
-            "id": 5,
-            "title": "Activity Calendar",
-            "description": "Stay on top of important tasks, meetings, and follow-ups.",
-            "icon": <FaCalendarDays />,
-            "iconBg": "#FDF2F8",
-            "iconBorder": "#F9A8D4",
-            "iconColor": "#DB2777",
-            "cardBorder": "#FBCFE8",
-            "cardGradient": "from-pink-50 to-transparent"
-        },
-        {
-            "id": 6,
-            "title": "Custom Reports",
-            "description": "Create custom reports and download insights in just a few clicks.",
-            "icon": <PiFileTextFill />,
-            "iconBg": "#ECFEFF",
-            "iconBorder": "#67E8F9",
-            "iconColor": "#0891B2",
-            "cardBorder": "#A5F3FC",
-            "cardGradient": "from-cyan-50 to-transparent"
-        }
-    ]
-
 
 
 const DahFeature = () => {
@@ -144,7 +65,7 @@ const DahFeature = () => {
                     ref={boxRef}
                     className='grid md:grid-col-2 lg:grid-cols-3 gap-10'>
                     {
-                        data.map((i) => {
+                        dashFeatureData.map((i) => {
                             return (
                                 <div key={i.id} className='border relative h-[200px] overflow-hidden group  rounded-2xl justify-center items-center p-4 flex flex-col gap-6 boxs' style={{ borderColor: i.cardBorder }}>
                                     <div

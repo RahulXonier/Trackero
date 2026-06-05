@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Pillars = () => {
     const pillarRef = useRef(null)
+    const cardRef = useRef(null)
 
     useEffect(() => {
 
@@ -23,36 +24,36 @@ const Pillars = () => {
             }
         });
 
-        // const cards = gsap.utils.toArray('.company-card');
 
-        gsap.fromTo('.company-card', {
-            y: 100,
-            opacity: 0,
-            scale: 0.9,
-        },
+
+        gsap.fromTo(
+            ".card",
+            {
+                y: 50,
+                opacity: 0,
+            },
             {
                 y: 0,
                 opacity: 1,
-                scale: 1,
-
                 duration: 1.2,
+                ease: "power2.out",
                 stagger: 0.25,
-                ease: 'power3.out',
-
                 scrollTrigger: {
-                    trigger: pillarRef.current,
-                    start: 'top 75%',
-                    invalidateOnRefresh: true,
-                }
-            });
+                    trigger: cardRef.current,
+                    start: "top 80%",
+                },
+
+            }
+
+        );
 
     }, []);
     return (
         <>
             <section className="sec " id="pillars">
-                <div className="wrap" ref={pillarRef}>
+                <div className="wrap" >
                     {/* SECTION HEAD */}
-                    <div className="sec-head ">
+                    <div ref={pillarRef} className="sec-head ">
                         <span className="eyebrow company">
                             One platform, three powers
                         </span>
@@ -72,10 +73,12 @@ const Pillars = () => {
                     </div>
 
                     {/* PILLARS */}
-                    <div className="pillars "
+                    <div
+                        ref={cardRef}
+                        className="pillars "
                     >
                         {/* TASK MANAGEMENT */}
-                        <div className="pillar p1 company-card ">
+                        <div className="pillar p1 card ">
                             <div className="pic">
                                 <svg
                                     width="26"
@@ -172,7 +175,7 @@ const Pillars = () => {
                         </div>
 
                         {/* SALES CRM */}
-                        <div className="pillar p2 company-card  ">
+                        <div className="pillar p2 card  ">
                             <div className="pic">
                                 <svg
                                     width="26"
@@ -266,7 +269,7 @@ const Pillars = () => {
                         </div>
 
                         {/* SUPPORT TICKETS */}
-                        <div className="pillar p3 company-card  ">
+                        <div className="pillar p3 card">
                             <div className="pic">
                                 <svg
                                     width="26"

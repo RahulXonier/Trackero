@@ -43,11 +43,11 @@ const Values = () => {
         )
     })
     return (
-        <>
-            <section className="py-24 max-w-[1200px] mx-auto px-7">
+        <div className='w-full min-h-[50vh]'>
+            <div className="py-20 max-w-7xl  mx-auto h-full  px-4">
                 <div
                     ref={coreRef}
-                    className="text-center max-w-[680px] mx-auto mb-16">
+                    className="text-center  mb-16">
                     <span className="inline-block bg-white border border-[#e3ebf2] rounded-full px-4 py-1.5 text-xs font-semibold text-[#0fb8c4] shadow-sm tracking-wide mb-4 new2">
                         Core Beliefs
                     </span>
@@ -70,8 +70,8 @@ const Values = () => {
                         </div>
                     ))}
                 </div>
-            </section>
-        </>
+            </div>
+        </div>
     )
 }
 

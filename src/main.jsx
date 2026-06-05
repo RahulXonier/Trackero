@@ -15,6 +15,7 @@ import JobDetails from './pages/jobDetails/JobDetails.jsx'
 import Blogs from './pages/blogs/Blogs.jsx'
 
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>

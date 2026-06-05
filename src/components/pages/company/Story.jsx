@@ -47,7 +47,7 @@ const timelineData = [
 
 const Story = () => {
     const [activeStep, setActiveStep] = useState(0);
-    
+
     const teamRef = useRef(null)
 
     useEffect(() => {
@@ -111,7 +111,7 @@ const Story = () => {
     }, [])
 
     return (
-        <section className="py-24 bg-[#f1f6fb] relative ">
+        <section className="py-20 bg-[#f1f6fb] relative ">
             <div
                 className="absolute inset-0 opacity-[0.15] mix-blend-multiply pointer-events-none"
                 style={{

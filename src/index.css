@@ -181,11 +181,6 @@ nav {
   color: var(--teal-600)
 }
 
-.nav-cta {
-  display: flex;
-  align-items: center;
-  gap: 10px
-}
 
 .nav-toggle {
   display: none;
@@ -1546,7 +1541,5 @@ footer {
     align-items: flex-start
   }
 
-  .nav-cta .btn-ghost {
-    display: none
-  }
+
 }

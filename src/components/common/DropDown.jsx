@@ -4,7 +4,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const DropDown = ({ title, items, top }) => {
-    console.log(items)
     return (
         <div className='flex flex-col gap-4 z-5'>
 

@@ -1,53 +1,11 @@
-import { FaUsers } from "react-icons/fa6"
-import { LuCircleDollarSign, LuTarget } from "react-icons/lu"
-import lead from '../../../assets/LeadPipeline.png'
-import team from '../../../assets/TeamOverview.png'
-import rev from '../../../assets/Revenue.png'
+
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { insightsData } from "../../../data/feature"
 gsap.registerPlugin(ScrollTrigger)
 
 
-
-const insights = [
-    {
-        "id": 1,
-        "title": "Team Overview",
-        "description": "Get a clear view of user distribution, activity status, and team engagement across your organization.",
-        "icon": <FaUsers />,
-        "iconBg": "#F5F3FF",
-        "iconBorder": "#C4B5FD",
-        "iconColor": "#7C3AED",
-        "cardBorder": "#DDD6FE",
-        "image": team,
-
-    },
-    {
-        "id": 2,
-        "title": "Lead Pipeline",
-        "description": "Visualize lead movement through every stage and identify opportunities to improve conversions.",
-        "icon": <LuTarget />,
-        "iconBg": "#ECFEFF",
-        "iconBorder": "#67E8F9",
-        "iconColor": "#0891B2",
-        "cardBorder": "#A5F3FC",
-        "image": lead,
-
-    },
-    {
-        "id": 3,
-        "title": "Revenue & Conversion",
-        "description": "Track revenue performance, deal values, close rates, and conversion metrics in real-time.",
-        "icon": <LuCircleDollarSign />,
-        "iconBg": "#FFF7ED",
-        "iconBorder": "#FDBA74",
-        "iconColor": "#EA580C",
-        "cardBorder": "#FED7AA",
-        "image": rev,
-
-    }
-]
 
 
 const Insight = () => {
@@ -59,7 +17,7 @@ const Insight = () => {
         gsap.from('.left', {
             x: -50,
             opacity: 0,
-            duration: 2,
+            duration: 1.2,
             scrollTrigger: {
                 trigger: cardRef.current,
                 start: 'top 80%',
@@ -70,7 +28,7 @@ const Insight = () => {
         gsap.from('.rightN', {
             x: 50,
             opacity: 0,
-            duration: 2,
+            duration: 1.2,
             scrollTrigger: {
                 trigger: cardRef.current,
                 start: 'top 80%',
@@ -98,7 +56,7 @@ const Insight = () => {
 
     return (
         <div className='w-full min-h-[80vh] py-20 overflow-auto bg-slate-100'>
-            <div className="max-w-7xl h-full mx-auto px-4">
+            <div className="max-w-7xl h-full mx-auto px-4 md:px-0 overflow-hidden ">
                 <div
                     ref={mainRef}
                     className='flex flex-col justify-center items-center '>
@@ -120,9 +78,9 @@ const Insight = () => {
                     ref={cardRef}
                     className="grid gap-4 mt-13">
                     {
-                        insights.map((i) => {
+                        insightsData.map((i) => {
                             return (
-                                <div key={i.id} className="grid  lg:grid-cols-2 gap-4 px-4 ">
+                                <div key={i.id} className="grid  lg:grid-cols-2 gap-10 ">
                                     <div className="border border-slate-100 rounded-2xl bg-white/60 hover:bg-white left">
                                         <div className="flex items-center  flex-col md:flex-row gap-4 p-8">
                                             <div className="flex justify-center border border-slate-100  items-center h-12 w-[48px]  rounded-xl text-xl"

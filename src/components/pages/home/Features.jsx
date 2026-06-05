@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -18,7 +18,7 @@ const Features = () => {
             {
                 y: 0,
                 opacity: 1,
-                duration: 2,
+                duration: 1.2,
                 ease: "power2.out",
                 stagger: 0.25,
                 scrollTrigger: {

@@ -1,10 +1,10 @@
 
 import Values from '../../components/pages/company/Values';
 import Story from '../../components/pages/company/Story';
-import Team from '../../components/pages/company/Team';
-import CTA from '../../components/pages/company/CTA';
+// import Team from '../../components/pages/company/Team';
 import Stats from '../../components/pages/company/Stats';
 import Hero from '../../components/pages/company/Hero';
+import CompanyCta from '../../components/pages/company/companyCTA';
 
 
 
@@ -38,8 +38,7 @@ const CompanyPage = () => {
 
 
             {/* ===== FINAL CTA BANNER ===== */}
-            <CTA />
-
+            <CompanyCta />
 
         </div>
     );

@@ -2,6 +2,7 @@ import React from "react";
 import logo from '../../assets/logo2.png'
 import Product from "../pages/footer/Product";
 import Company from "../pages/footer/Company";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -11,12 +12,12 @@ const Footer = () => {
                 <div className="fgrid-main">
                     {/* BRAND */}
                     <div className="col-span-2 md:col-span-1">
-                        <a href="#" className="logo">
+                        <Link to='/' onClick={() => window.scrollTo(0, 0)} className="logo">
                             <span className="h-10 ">
                                 <img src={logo} alt="logo" className='object-cover h-full' />
                             </span>
 
-                        </a>
+                        </Link>
 
                         <p className="my-5">
                             The modern platform that helps you
@@ -118,13 +119,13 @@ const Footer = () => {
                                     "rgba(255,255,255,.85)",
                                 marginBottom: "4px",
                             }}
-                            className="my-5"
+                            className="my-4"
                         >
                             Get product updates and tips,
                             straight to your inbox.
                         </p>
 
-                        <div className="news-form">
+                        <div className="news-form mt-4">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
