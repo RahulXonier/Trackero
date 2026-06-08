@@ -6,22 +6,25 @@ import { SolutionData } from '../../data/solution';
 import { TiThMenu } from 'react-icons/ti';
 import { useState } from 'react';
 import { TbXboxX } from 'react-icons/tb';
+import NavbarComponent from '../common/NavbarComponent';
 
 
 
 
 const Navbar = () => {
+    const [drop, setDrop] = useState(false)
     const [active, setActive] = useState(false)
     const handleClick = () => {
         setActive(false)
+        setDrop(false)
         window.scrollTo(0, 0)
 
     }
     return (
         <>
-            <header  >
-                <div class="wrap z-99">
-                    <nav  >
+            <header className='relative' >
+                <div class="max-w-7xl mx-auto z-99 px-4 ">
+                    <nav className=' flex   items-center border rounded-full justify-between px-6 py-3 border-slate-200 bg-white/80'  >
                         <Link to='/'
                             onClick={() => window.scrollTo(0, 0)}
                             className="logo ">
@@ -31,10 +34,9 @@ const Navbar = () => {
                         </Link>
                         <div className='flex gap-15'>
                             <div
-                                className={`${active
-                                    ? "fixed top-3.5  right-0  h-screen w-[280px] bg-white flex flex-col  p-6 transition-all duration-700 translate-x-0"
-                                    : "  hidden lg:flex gap-[30px] font-[500] text-[15px] text-[var(--ink-700)] items-center"
-                                    }`}
+                                className=
+                                "hidden lg:flex gap-[30px] font-[500] text-[15px] text-[var(--ink-500)] items-center"
+
                             >
                                 {
                                     active &&
@@ -69,7 +71,7 @@ const Navbar = () => {
                                     to='/Company'
                                     onClick={handleClick}>Company</Link>
                             </div>
-                            <div className="nav-cta hidden md:flex py-4 md:py-0 gap-10">
+                            <div className="nav-cta hidden lg:flex py-4 md:py-0 gap-8">
                                 <Link to='/Form' className="btn btn-ghost"
                                     onClick={handleClick}>Get a demo</Link>
                                 <Link
@@ -80,12 +82,21 @@ const Navbar = () => {
                             </div>
 
                         </div>
-                        <div className='flex md:hidden text-2xl px-5 text-cyan-600' onClick={() => setActive(!active)}><TiThMenu />
+                        <div className='flex lg:hidden text-2xl px-5 text-cyan-600' onClick={() => setActive(!active)}><TiThMenu />
+
+
 
                         </div>
 
                     </nav>
+
                 </div>
+                {
+                    active &&
+                    <NavbarComponent handleClick={handleClick} drop={drop} setDrop={setDrop} setActive={setActive} active={active} logo={logo} />
+
+                }
+
             </header>
         </>
     )

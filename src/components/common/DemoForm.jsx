@@ -71,8 +71,8 @@ const DemoForm = () => {
                             <span className="h-4 w-4 flex justify-center items-center rounded-full bg-teal-100 text-lg"><GoDotFill /></span>
 
                             Book a free Demo </span>
-                        <h1>Show How a Trakeroo Transform <span className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] bg-clip-text text-transparent"> Your WorkfLow</span> </h1>
-                        <p className='text-[18px] mt-4'>Management project team, sales, and support from one powerful dashboard built for modern business </p>
+                        <h1 className='text-4xl md:text-5xl'>Show How a Trakeroo Transform <span className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] bg-clip-text text-transparent"> Your WorkfLow</span> </h1>
+                        <p className='text-[18px] mt-4 text-[var(--ink-500)]'>Management project team, sales, and support from one powerful dashboard built for modern business </p>
 
 
                     </div>
@@ -80,18 +80,18 @@ const DemoForm = () => {
                         <div className='flex gap-4 py-10 border-b border-slate-200 '>
                             <span className='text-4xl text-[var(--teal-600)] h-14 w-16  flex justify-center items-center rounded-2xl bg-white '><TfiHeadphoneAlt />
                             </span>
-                            <div className='grid gap-4'>
+                            <div className='grid gap-3'>
                                 <h3 className='text-[18px]'>24/7 Support</h3>
-                                <p className='text-[13.5px]'>Our Expert are always available to help you succeed</p>
+                                <p className='text-[16px] text-[var(--ink-500)]'>Our Expert are always available to help you succeed</p>
                             </div>
                         </div>
 
                         <div className='flex gap-4 py-10'>
                             <span className='h-14 w-16 flex justify-center items-center rounded-2xl bg-white'><BiCheckShield className='text-5xl text-[var(--teal-600)] ' />
                             </span>
-                            <div className='grid gap-4'>
+                            <div className='grid gap-3'>
                                 <h3 className='text-[18px]'>Enterprise Ready</h3>
-                                <p className='text-[13.5px]'>Built for startup and large teams with enterprise-grade security</p>
+                                <p className='text-[16px] text-[var(--ink-500)]'>Built for startup and large teams with enterprise-grade security</p>
                             </div>
                         </div>
 

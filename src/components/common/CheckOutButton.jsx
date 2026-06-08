@@ -179,7 +179,7 @@ const CheckOutButton = () => {
 
 
       <div className='max-w-7xl mx-auto px-4 '>
-        <span className=" flex items-center gap-2 mb-9 justify-center"><TiLockClosedOutline className="text-2xl text-green-500" />
+        <span className=" flex items-center gap-2 mb-9 justify-center text-[var(--ink-500)]"><TiLockClosedOutline className="text-2xl text-green-500" />
           Secured checkout powered by PayPal </span>
         <div className=" grid lg:grid-cols-4 grid-cols-2 justify-center">
           {data.features.map((i, ind) => {
@@ -190,7 +190,7 @@ const CheckOutButton = () => {
                   <span className="text-xl">{i.icon}</span>
                 </span>
 
-                <span className="text-[14.5px]">{i.title}</span>
+                <span className="text-[14.5px] text-[var(--ink-500)]">{i.title}</span>
 
 
               </div>
@@ -210,9 +210,9 @@ const CheckOutButton = () => {
               </div>
               <div className="flex gap-2 flex-col">
                 <h3 className="font-medium">{data.plan.name}</h3>
-                <span className="text-[14.5px]">{data.plan.description}</span>
+                <span className="text-[14.5px] text-[var(--ink-500)]">{data.plan.description}</span>
 
-                <div className="text-[14.5px]">
+                <div className="text-[14.5px] text-[var(--ink-500)]">
                   <span>
                     {data.plan.currency}
                   </span>
@@ -224,12 +224,12 @@ const CheckOutButton = () => {
               </div>
             </div>
 
-            <div className="px-5">
+            <div className="px-5 text-[var(--ink-500)]">
               <div className="flex justify-between mt-5 text-[14.5px] ">
                 <span>Plan</span>
                 <span>{data.summary.plan}</span>
               </div>
-              <div className="flex justify-between py-5 border-b border-slate-200 text-[14.5px]">
+              <div className="flex justify-between py-5 border-b border-slate-200 text-[14.5px] ">
                 <span>Billing</span>
                 <span>{data.summary.billing}</span>
               </div>
@@ -268,7 +268,7 @@ const CheckOutButton = () => {
                       </div>
                       <div className="flex gap-2 flex-col justify-center">
                         <h3 className="font-medium text-[16px]">{i.title}</h3>
-                        <span className="text-[14.5px]">{i.description}</span>
+                        <span className="text-[14.5px] text-[var(--ink-500)]">{i.description}</span>
 
 
 
@@ -295,7 +295,7 @@ const CheckOutButton = () => {
                 </div>
                 <div className="flex gap-2 flex-col justify-center">
                   <h3 className="font-medium text-[16px]">You won't be charged today </h3>
-                  <span className="text-[14.5px]">Your 14-day free trial started now.</span>
+                  <span className="text-[14.5px] text-[var(--ink-500)]">Your 14-day free trial started now.</span>
                 </div>
               </div>
 
@@ -316,7 +316,7 @@ const CheckOutButton = () => {
 
               <div className="relative">
                 <div className="text-[14.5px] flex justify-center   bg-white z-2">
-                  <span className="bg-white z-10 px-2 text-[14.5px]">We accept</span>
+                  <span className="bg-white z-10 px-2 text-[14.5px] text-[var(--ink-500)]">We accept</span>
                 </div>
                 <div className="absolute top-3 left-0 h-[1px] w-full bg-slate-200" />
                 <div className="flex gap-8 my-5 justify-center">
@@ -343,7 +343,7 @@ const CheckOutButton = () => {
                 </div>
                 <div className="flex gap-2 flex-col justify-center">
                   <h3 className="font-medium text-[16px]">{data.security.title} </h3>
-                  <span className="text-[14.5px]">{data.security.description}.</span>
+                  <span className="text-[14.5px] text-[var(--ink-500)]">{data.security.description}.</span>
                 </div>
               </div>
             </div>

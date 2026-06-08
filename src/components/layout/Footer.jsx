@@ -110,22 +110,21 @@ const Footer = () => {
 
                     {/* NEWSLETTER */}
                     <div className="col-span-2 md:col-span-1">
-                        <h5>Newsletter</h5>
+                        <h5 className="mb-5">Newsletter</h5>
 
-                        <p
+                        <span
                             style={{
                                 fontSize: "14px",
                                 color:
                                     "rgba(255,255,255,.85)",
-                                marginBottom: "4px",
                             }}
-                            className="my-4"
+                            className=" "
                         >
                             Get product updates and tips,
                             straight to your inbox.
-                        </p>
+                        </span>
 
-                        <div className="news-form mt-4">
+                        <div className="news-form mt-5">
                             <input
                                 type="email"
                                 placeholder="Enter your email"

@@ -58,7 +58,7 @@ const Pillars = () => {
                             One platform, three powers
                         </span>
 
-                        <h2 className="company">
+                        <h2 className="company text-[30px] md:text-[40px]">
                             Three teams.{" "}
                             <span className="grad-text">
                                 One source of truth.
@@ -75,7 +75,7 @@ const Pillars = () => {
                     {/* PILLARS */}
                     <div
                         ref={cardRef}
-                        className="pillars "
+                        className="pillars p-4 "
                     >
                         {/* TASK MANAGEMENT */}
                         <div className="pillar p1 card ">

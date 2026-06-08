@@ -14,9 +14,12 @@ const Insight = () => {
     const cardRef = useRef(null)
     const mainRef = useRef(null)
     useEffect(() => {
-        gsap.from('.left', {
+        gsap.fromTo('.left', {
             x: -50,
             opacity: 0,
+        }, {
+            x: 0,
+            opacity: 1,
             duration: 1.2,
             scrollTrigger: {
                 trigger: cardRef.current,
@@ -55,8 +58,8 @@ const Insight = () => {
     }, [])
 
     return (
-        <div className='w-full min-h-[80vh] py-20 overflow-auto bg-slate-100'>
-            <div className="max-w-7xl h-full mx-auto px-4 md:px-0 overflow-hidden ">
+        <div className='w-full min-h-[80vh] py-20 overflow-auto bg-slate-100 px-4'>
+            <div className="max-w-7xl h-full mx-auto px-4 md:px-0">
                 <div
                     ref={mainRef}
                     className='flex flex-col justify-center items-center '>
@@ -71,16 +74,16 @@ const Insight = () => {
 
                             Better Decision</span>
                     </h2>
-                    <p className='max-w-150 text-center text-[17px] text-sm mt-[14px] text-[var(--ink-500)] mainH '>Dive deeper nto your data and uncover insight that help you grow .</p>
+                    <p className='max-w-150 text-center text-[16px] text-sm mt-[14px] text-[var(--ink-500)] mainH '>Dive deeper into your data and uncover insight that help you grow .</p>
                 </div>
 
                 <div
                     ref={cardRef}
-                    className="grid gap-4 mt-13">
+                    className="w-full flex flex-col gap-6 mt-13">
                     {
                         insightsData.map((i) => {
                             return (
-                                <div key={i.id} className="grid  lg:grid-cols-2 gap-10 ">
+                                <div key={i.id} className="grid  lg:grid-cols-2 gap-4 md:gap-12 ">
                                     <div className="border border-slate-100 rounded-2xl bg-white/60 hover:bg-white left">
                                         <div className="flex items-center  flex-col md:flex-row gap-4 p-8">
                                             <div className="flex justify-center border border-slate-100  items-center h-12 w-[48px]  rounded-xl text-xl"

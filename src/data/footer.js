@@ -15,9 +15,9 @@ export const productPages = [
         },
 
         stats: [
-            { number: "35", suf: '%', label: "Higher Productivity" },
-            { number: "50", suf: '%', label: "Fewer Delays" },
-            { number: "10", suf: 'K+', label: "Tasks Managed" }
+            { number: "35", suf: '%', label: "Higher Productivity", style: '' },
+            { number: "50", suf: '%', label: "Fewer Delays", style: 'border-l border-white/20' },
+            { number: "10", suf: 'K+', label: "Tasks Managed", style: 'col-span-2 md:col-span-1 md:border-l border-white/20' }
         ],
 
         features: [
@@ -123,9 +123,9 @@ export const productPages = [
         },
 
         stats: [
-            { number: "40", suf: '%', label: "More Qualified Leads" },
-            { number: "25", suf: '%', label: "Higher Conversion" },
-            { number: "3", suf: 'X', label: "Pipeline Visibility" }
+            { number: "40", suf: '%', label: "More Qualified Leads", style: '' },
+            { number: "25", suf: '%', label: "Higher Conversion", style: 'border-l border-white/20' },
+            { number: "3", suf: 'X', label: "Pipeline Visibility", style: 'col-span-2 md:col-span-1 md:border-l border-white/20' }
         ],
 
         features: [
@@ -220,9 +220,9 @@ export const productPages = [
         },
 
         stats: [
-            { number: "60", suf: '%', label: "Faster Resolution" },
-            { number: "95", suf: '%', label: "Customer Satisfaction" },
-            { number: "24", suf: '/7', label: "Ticket Tracking" }
+            { number: "60", suf: '%', label: "Faster Resolution", style: '' },
+            { number: "95", suf: '%', label: "Customer Satisfaction", style: 'border-l border-white/20' },
+            { number: "24", suf: '/7', label: "Ticket Tracking", style: 'col-span-2 md:col-span-1 md:border-l border-white/20' }
         ],
 
         features: [
@@ -317,9 +317,9 @@ export const productPages = [
         },
 
         stats: [
-            { number: "50", suf: '+', label: "Integration Options" },
-            { number: "90", suf: '%', label: "Less Manual Work" },
-            { number: "24", suf: '/7', label: "Data Sync" }
+            { number: "50", suf: '+', label: "Integration Options", style: '' },
+            { number: "90", suf: '%', label: "Less Manual Work", style: 'border-l border-white/20' },
+            { number: "24", suf: '/7', label: "Data Sync", style: 'col-span-2 md:col-span-1 md:border-l border-white/20' }
         ],
 
         features: [

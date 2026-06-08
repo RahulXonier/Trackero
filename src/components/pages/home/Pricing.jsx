@@ -17,7 +17,7 @@ const Pricing = () => {
                         Simple, transparent pricing
                     </span>
 
-                    <h2>
+                    <h2 className="text-[30px] md:text-[40px]">
                         Plans that scale{" "}
                         <span className="grad-text">
                             with your team.
@@ -31,7 +31,7 @@ const Pricing = () => {
                 </div>
 
                 {/* PRICING GRID */}
-                <div className="pgrid">
+                <div className="pgrid p-4">
                     {/* STARTER */}
                     <div className="pcard ">
                         <h4>Starter</h4>

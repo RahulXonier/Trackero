@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { productPages } from '../../data/footer';
+import CTA from './CTA';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -28,7 +29,7 @@ const ProductPage = () => {
                 opacity: 1,
                 stagger: 0.25,
                 ease: 'power3.inOut',
-                duration: 2
+                duration: 1.2
 
             }
         )
@@ -42,7 +43,7 @@ const ProductPage = () => {
                 opacity: 1,
                 stagger: 0.25,
                 ease: 'power3.inOut',
-                duration: 2,
+                duration: 1.2,
                 scrollTrigger: {
                     trigger: feaRef.current,
                     start: 'top 80%'
@@ -60,7 +61,7 @@ const ProductPage = () => {
                 opacity: 1,
                 stagger: 0.25,
                 ease: 'power3.inOut',
-                duration: 2,
+                duration: 1.2,
                 scrollTrigger: {
                     trigger: feaRef.current,
                     start: 'top 80%'
@@ -78,7 +79,7 @@ const ProductPage = () => {
                 opacity: 1,
                 stagger: 0.25,
                 ease: 'power3.inOut',
-                duration: 2,
+                duration: 1.2,
                 scrollTrigger: {
                     trigger: feaRef.current,
                     start: 'top 80%'
@@ -96,7 +97,7 @@ const ProductPage = () => {
                 opacity: 1,
                 stagger: 0.25,
                 ease: 'power3.inOut',
-                duration: 2,
+                duration: 1.2,
                 scrollTrigger: {
                     trigger: teamRef.current,
                     start: 'top 80%'
@@ -115,7 +116,7 @@ const ProductPage = () => {
                 opacity: 1,
                 stagger: 0.25,
                 ease: 'power3.inOut',
-                duration: 2,
+                duration: 1.2,
                 scrollTrigger: {
                     trigger: teamRef.current,
                     start: 'top 80%'
@@ -145,12 +146,12 @@ const ProductPage = () => {
             <section className="relative bg-slate-200  overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#1ba2c3]/10 via-white to-[#33bf8b]/10" />
 
-                <div className="max-w-7xl mx-auto px-6 py-28 relative z-10 flex  flex-col items-center ">
+                <div className="max-w-7xl mx-auto px-6 py-20 relative z-10 flex  flex-col items-center ">
                     <span className="inline-flex px-4 py-2 rounded-full bg-white/80 text-[#1ba2c3] w-fit font-medium text-sm new">
                         {product.hero.badge}
                     </span>
 
-                    <h1 className="mt-6 text-5xl lg:text-7xl font-bold text-[#043264] leading-tight text-center max-w-4xl new">
+                    <h1 className="mt-6 text-4xl lg:text-5xl font-bold text-[#043264] leading-tight text-center max-w-4xl new">
                         {product.hero.title}
                         <span className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] bg-clip-text text-transparent">
                             {product.hero.title2}
@@ -175,24 +176,25 @@ const ProductPage = () => {
             </section>
 
             {/* STATS */}
-            <section className="-mt-10 relative z-20">
-                <div className="max-w-6xl mx-auto px-6">
-                    <div className="grid md:grid-cols-3 gap-5">
-                        {product.stats.map((item, index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,.04)]"
-                            >
-                                <h3 className="text-4xl font-bold text-[#043264]">
-                                    <Counter end={`${item.number}`} start={true} />{item.suf}
-                                </h3>
+          
 
-                                <p className="text-slate-500 mt-2">
-                                    {item.label}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
+
+            <section className="max-w-[1200px] mx-auto px-7 -mt-12 relative z-20">
+                <div className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5]  rounded-3xl p-8 md:p-12 shadow-[0_16px_40px_rgba(15,184,196,0.30)] relative overflow-hidden text-white grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+                    <div
+                        className="absolute flex  justify-center top-[-120px] right-[-60px] w-[300px] h-[300px] bg-white/10 rounded-full pointer-events-none" />
+                    {
+                        product.stats.map((i, ind) => {
+                            return (
+                                <div key={ind} className={`relative  ${i.style}`}>
+                                    <div className="font-sora text-3xl md:text-4xl font-extrabold">
+                                        <Counter end={30} start={`${i.number}`} start={true} />{i.suf}</div>
+                                    <div className="text-sm opacity-90 mt-2">{i.label}</div>
+                                </div>
+                            )
+                        })
+                    }
+
                 </div>
             </section>
 
@@ -404,8 +406,12 @@ const ProductPage = () => {
                 </section>
             )}
 
+            <CTA title={'Ready to Get Started?'} desc={`Bring your projects, CRM, support,
+                            and workflows together in one
+                            powerful platform.`} btn={' Start Free Trial'} />
 
-            <section className="py-28">
+
+            {/* <section className="py-28">
                 <div className="max-w-6xl mx-auto px-6">
 
                     <div className="rounded-[40px] overflow-hidden bg-gradient-to-r from-[#1ba2c3] to-[#33bf8b] p-16 text-center text-white">
@@ -426,7 +432,7 @@ const ProductPage = () => {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
         </main>
     );
 };

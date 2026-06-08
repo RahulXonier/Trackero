@@ -43,22 +43,23 @@ const Hero = () => {
         <>
             <section className="hero">
                 <div className="wrap">
-                    <div className="hero-inner">
+                    <div className="hero-inner p-4">
                         {/* LEFT CONTENT */}
-                        <div className="hero-copy left">
+                        <div className="hero-copy flex flex-col justify-center items-center md:items-start mb-10 lg:mb-0 left">
                             <span className="pill mb-6">
                                 <span className="dot "></span>
                                 Tasks · CRM · Support — in one workspace
                             </span>
 
-                            <h1 className='mb-4'>
+                            <h1 className='mb-4 max-w-[500px] text-4xl md:text-5xl text-center lg:text-start'>
                                 If your team is doing it,{" "}
                                 <span className="grad-text">
                                     Trakeroo is tracking it.
                                 </span>
                             </h1>
 
-                            <p className="sub">
+                            <p className="sub 
+                            <h1 className='mb-4 text-center md:text-start">
                                 One platform for engineering tasks, sales pipelines, and support
                                 tickets — so every piece of work is visible, owned, and
                                 measured. No more juggling five tools.
@@ -114,7 +115,7 @@ const Hero = () => {
                         </div>
 
                         {/* RIGHT VISUAL */}
-                        <div className="hero-visual right">
+                        <div className="hero-visual right ">
                             <div className="mock">
                                 <div className="mock-bar">
                                     <i></i>
@@ -234,7 +235,7 @@ const Hero = () => {
                             </div>
 
                             {/* FLOAT CARD 1 */}
-                            <div className="float-card float-1">
+                            <div className="float-card float-1 ">
                                 <span
                                     className="float-ic"
                                     style={{
@@ -259,7 +260,7 @@ const Hero = () => {
                                 </span>
 
                                 <div>
-                                    <div className="lbl">Team velocity</div>
+                                    <div className="lbl whitespace-nowrap">Team velocity</div>
                                     <div className="val">+38% ↑</div>
                                 </div>
                             </div>
@@ -290,7 +291,7 @@ const Hero = () => {
                                 </span>
 
                                 <div>
-                                    <div className="lbl">
+                                    <div className="lbl whitespace-nowrap">
                                         Tickets resolved
                                     </div>
 

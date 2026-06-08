@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -44,7 +44,7 @@ const Testimonials = () => {
                         Loved by teams everywhere
                     </span>
 
-                    <h2 className="team">
+                    <h2 className="team text-3xl md:text-4xl">
                         Don't just take{" "}
                         <span className="grad-text">
                             our word for it.
@@ -53,7 +53,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* TESTIMONIAL GRID */}
-                <div className="tgrid">
+                <div className="tgrid p-4">
                     {/* CARD 1 */}
                     <div className="tcard team">
                         <div className="qmark">"</div>

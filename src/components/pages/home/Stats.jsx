@@ -30,7 +30,7 @@ const Stats = () => {
             <div
                 ref={wrapRef}
                 className="wrap">
-                <div className="statband">
+                <div className="statband mx-4">
                     {/* STAT 1 */}
                     <div className="stat">
                         <div

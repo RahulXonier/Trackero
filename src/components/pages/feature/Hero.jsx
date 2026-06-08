@@ -57,12 +57,12 @@ const Hero = () => {
 
     }, [])
     return (
-        <div className='w-full min-h-[90vh] relative py-20'>
+        <div className='w-full min-h-[90vh] relative py-20 px-4'>
 
             {/* <div className='absolute right-[20%] top-[15%] h-100 w-100 rounded-full z-10 opacity-20 bg-linear-to-r from-cyan-600 to-emerald-400'></div> */}
             <div className='absolute hidden md:block  h-155 w-125 z-0 right-0 top-5 opacity-60 rounded-l-full bg-linear-150 from-[#1ba2c3] to-[#2ca679]'></div>
 
-            <div className='max-w-7xl mx-auto h-full  flex flex-col lg:flex-row justify-between gap-10  lg:gap-0 lg:px-0 px-4 '>
+            <div className='max-w-7xl mx-auto h-full  flex flex-col lg:flex-row justify-between gap-10  lg:gap-0 lg:px-0 px-2 '>
                 <div className='w-full lg:w-[42%] flex flex-col  lg:items-start items-center left'>
                     <span className=" flex  items-center gap-2 px-4 py-1.5 bg-white border border-[#e3ebf2] rounded-full text-[13.5px] font-semibold text-[#0fb8c4] shadow-sm mb-6">
                         <span className="w-2 h-2 rounded-full bg-[#16c2cf] animate-pulse  "></span>
@@ -75,7 +75,7 @@ const Hero = () => {
                             Complete Overview
                         </span>
                     </h2>
-                    <p className='text-[18px] text-[var(--ink-500)] text-center lg:text-start'>Get 360<sup>o</sup>{' '} view of your business operations in one place.
+                    <p className='text-[16px] text-[var(--ink-500)] text-center lg:text-start'>Get 360<sup>o</sup>{' '} view of your business operations in one place.
                         Track performance, manage teams, and make data-driven decision with ease.</p>
 
                     <div className='flex flex-col gap-2 mt-4 ' >
@@ -83,9 +83,9 @@ const Hero = () => {
                             heroData.map((i) => {
                                 return (
                                     <div className='flex gap-4 items-center'>
-                                        <div className={`h-10 w-10 rounded-full flex justify-center items-center ${i.color}`}>
-                                            <span className='text-xl'>{i.icon}</span></div>
-                                        <div className='text-[17px] text-[var(--ink-500)]'>{i.head}</div>
+                                        <div className={`h-9 w-9 rounded-full flex justify-center items-center ${i.color}`}>
+                                            <span className='text-lg'>{i.icon}</span></div>
+                                        <div className='text-[16px] text-[var(--ink-500)]'>{i.head}</div>
 
                                     </div>
                                 )
@@ -98,11 +98,11 @@ const Hero = () => {
 
                 </div>
                 <div className='w-full lg:w-[53%] relative z-2 flex items-center right'>
-                    <div className={`absolute  bottom-[40px] z-0 rounded-2xl overflow-hidden left-[-10px] lg:left-[-50px] shadow-[0px_0px_12px_#00000020] hover:shadow-[0px_0px_18px_#00000025] box`}
+                    <div className={`absolute h-12  bottom-[-20px] lg:bottom-[20px] md:h-15 z-0 rounded-2xl overflow-hidden left-[20px] lg:left-[-50px] shadow-[0px_0px_12px_#00000020] hover:shadow-[0px_0px_18px_#00000025] box`}
                     >
                         <img src={acc} alt='icon' className='w-full h-full object-cover' />
                     </div>
-                    <div className='w-full h-[90%] rounded-2xl shadow-[0px_0px_12px_#00000020] hover:shadow-[0px_0px_18px_#00000025] overflow-hidden'>
+                    <div className='w-full h-[80%] md:h-[90%] px-4 lg:px-0  rounded-2xl shadow-[0px_0px_12px_#00000020] hover:shadow-[0px_0px_18px_#00000025] overflow-hidden'>
                         <img src={dashboard} alt='dashboard' className='w-full h-full object-fill object-fill' />
                     </div>
                 </div>

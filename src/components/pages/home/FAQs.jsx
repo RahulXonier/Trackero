@@ -13,7 +13,7 @@ const FAQ = () => {
                         FAQ
                     </span>
 
-                    <h2>
+                    <h2 className="text-3xl md:text-4xl">
                         Questions?{" "}
                         <span className="grad-text">
                             We've got answers.

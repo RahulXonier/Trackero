@@ -48,7 +48,7 @@ const Features = () => {
                         Why teams choose Trakeroo
                     </span>
 
-                    <h2 className="fea">
+                    <h2 className="fea text-3xl md:text-4xl">
                         Everything you need to grow,{" "}
                         <span className="grad-text">
                             in one platform.
@@ -62,7 +62,7 @@ const Features = () => {
                 </div>
 
                 {/* FEATURES GRID */}
-                <div className="fgrid">
+                <div className="fgrid p-4">
                     {/* CARD 1 */}
                     <div className="fcard fea ">
                         <div className="fic ">

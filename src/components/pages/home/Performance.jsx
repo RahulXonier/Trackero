@@ -97,7 +97,7 @@ const Performance = () => {
                                 Performance, measured
                             </span>
 
-                            <h2>
+                            <h2 className="text-3xl md:text-4xl">
                                 Every task tells you{" "}
                                 <span className="grad-text">
                                     who, what & how well.
@@ -177,11 +177,11 @@ const Performance = () => {
                             </div>
 
 
-                            <div
+                            <div className="w-full"
                                 ref={chartRef}>
                                 {
                                     showChart && (
-                                        <BarChart width={500} height={200} data={barsData}>
+                                        <BarChart width='100%' height={200} data={barsData}>
                                             <YAxis />
                                             <XAxis
                                                 dataKey='day' />

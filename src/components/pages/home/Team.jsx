@@ -3,14 +3,14 @@ import React from "react";
 const Team = () => {
     return (
         <section className="sec" id="team">
-            <div className="wrap">
+            <div className="wrap p-4">
                 {/* SECTION HEAD */}
                 <div className="sec-head ">
                     <span className="eyebrow">
                         Our team
                     </span>
 
-                    <h2>
+                    <h2 className="text-3xl md:text-4xl">
                         Meet the people{" "}
                         <span className="grad-text">
                             behind Trakeroo.

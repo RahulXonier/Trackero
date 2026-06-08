@@ -58,7 +58,7 @@ const DahFeature = () => {
                         <span className="bg-gradient-to-r from-[#16c2cf] to-[#0fb8a5] bg-clip-text text-transparent">
                             glance</span>
                     </h2>
-                    <p className='max-w-150 text-center text-[17px] text-sm mt-[14px] text-[var(--ink-500)]  mainHead '>Our dashboard gives you a complete overview of your operations with powerful insights and intuitive visuals.</p>
+                    <p className='max-w-150 text-center text-[16px] text-sm mt-[14px] text-[var(--ink-500)]  mainHead '>Our dashboard gives you a complete overview of your operations with powerful insights and intuitive visuals.</p>
                 </div>
 
                 <div
