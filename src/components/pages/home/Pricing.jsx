@@ -17,7 +17,7 @@ const Pricing = () => {
                         Simple, transparent pricing
                     </span>
 
-                    <h2 className="text-[30px] md:text-[40px]">
+                    <h2 className="text-3xl md:text-4xl">
                         Plans that scale{" "}
                         <span className="grad-text">
                             with your team.

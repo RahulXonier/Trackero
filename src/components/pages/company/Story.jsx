@@ -137,7 +137,7 @@ const Story = () => {
                             Trakeroo.
                         </span>
                     </h2>
-                    <p className="text-[#5a6b86] text-[15px] leading-relaxed max-w-xl text-center new1">
+                    <p className="text-[#5a6b86] text-[16px] leading-relaxed max-w-xl text-center new1">
                         From a small design wireframe to a highly stable ecosystem supporting complex engineering and product operations teams globally. We're just scratching the surface.
                     </p>
                 </div>

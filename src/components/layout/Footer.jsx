@@ -29,7 +29,7 @@ const Footer = () => {
                         {/* SOCIALS */}
                         <div className="fsoc">
                             {/* FACEBOOK */}
-                            <a href="#">
+                            <a href="https://www.facebook.com/xoniertechInc/">
                                 <svg
                                     width="18"
                                     height="18"
@@ -41,7 +41,7 @@ const Footer = () => {
                             </a>
 
                             {/* TWITTER */}
-                            <a href="#">
+                            <a href="https://x.com/xonier_tech">
                                 <svg
                                     width="18"
                                     height="18"
@@ -53,7 +53,7 @@ const Footer = () => {
                             </a>
 
                             {/* LINKEDIN */}
-                            <a href="#">
+                            <a href="https://www.linkedin.com/company/xoniertechnologies">
                                 <svg
                                     width="18"
                                     height="18"
@@ -65,7 +65,7 @@ const Footer = () => {
                             </a>
 
                             {/* INSTAGRAM */}
-                            <a href="#">
+                            <a href="https://www.instagram.com/xoniertechinc/">
                                 <svg
                                     width="18"
                                     height="18"

@@ -11,14 +11,15 @@ import { toast } from 'react-toastify';
 
 
 const DemoForm = () => {
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         address: '',
-        industry_type: '',
-        company_name: '',
-        team_size: '',
+        industryType: '',
+        companyName: '',
+        teamSize: '',
         message: '',
     })
 
@@ -34,9 +35,11 @@ const DemoForm = () => {
         e.preventDefault()
         console.log(formData)
         try {
-            const res = await axios.post('http://127.0.0.1:8000/api/query',
+            const res = await axios.post('http://0.0.0.0:8000/api/query',
                 formData
             )
+            console.log(formData)
+
 
             if (res.status === 200) {
                 toast("Thank's, we will connect soon....")
@@ -49,9 +52,9 @@ const DemoForm = () => {
                         email: '',
                         phone: '',
                         address: '',
-                        industry_type: '',
-                        company_name: '',
-                        team_size: '',
+                        industryType: '',
+                        companyName: '',
+                        teamSize: '',
                         message: '',
                     }
                 )
@@ -181,13 +184,13 @@ const DemoForm = () => {
                                 Company Name<span className='text-red-400 pl-1'>*</span>
                             </label>
                             <input
-                                name='company_name'
+                                name='companyName'
                                 type='text'
                                 className='border border-slate-100 rounded-2xl py-4 px-3 text-sm outline-0 hover:border-slate-300'
                                 required
 
                                 placeholder='Your company'
-                                value={formData.company_name}
+                                value={formData.companyName}
                                 onChange={handleChange}
                             />
 
@@ -198,11 +201,11 @@ const DemoForm = () => {
                             </label>
 
                             <select
-                                name='team_size'
+                                name='teamSize'
                                 type='text'
                                 required
                                 className='border border-slate-100 rounded-2xl py-4 px-3 text-sm outline-0 hover:border-slate-300'
-                                value={formData.team_size}
+                                value={formData.teamSize}
                                 onChange={handleChange}
                             >
                                 <option value="">Select</option>
@@ -223,13 +226,12 @@ const DemoForm = () => {
                             </label>
                             <input
                                 type='text'
-                                required
-                                name='industry_type'
+                                name='industryType'
                                 className='border border-slate-100 rounded-2xl py-4 px-3 text-sm outline-0 hover:border-slate-300'
 
                                 onChange={handleChange}
                                 placeholder='e.g. Technology, Healthcare, Finance'
-                                value={formData.industry_type}
+                                value={formData.industryType}
                             />
 
                         </div>

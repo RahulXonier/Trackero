@@ -54,7 +54,7 @@ const Navbar = () => {
                                     <IoMdArrowDropdown className="text-lg transition-transform duration-300 group-hover:rotate-180" />
 
                                     {/* Dropdown */}
-                                    <div className="absolute top-20 right-0  bg-white flex gap-5 shadow-xl rounded-2xl p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                                    <div className="absolute top-20 left-[-180px]  bg-white flex gap-5 shadow-xl rounded-2xl p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
                                         {
                                             SolutionData.map((i) => (
                                                 <DropDown key={i.id} top={i.top} title={i.title} items={i.items} />
